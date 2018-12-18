@@ -1,0 +1,14 @@
+{
+  "name": "@ucd-lib/scale-zero-vms",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jrmerz@ucdavis.edu",
+  "license": "MIT",
+  "dependencies": {
+    "tcp-proxy.js": "^1.2.0"
+  }
+}
