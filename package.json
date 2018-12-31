@@ -9,6 +9,9 @@
   "author": "jrmerz@ucdavis.edu",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.16.4",
+    "ip-address": "^5.8.9",
+    "ip-cidr": "^2.0.2",
     "tcp-proxy.js": "^1.2.0"
   }
 }
