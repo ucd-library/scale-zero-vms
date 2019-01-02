@@ -8,7 +8,7 @@ Either place the config file in /etc/scale-zero-proxy/config.json are pass as ar
 ## Postgres Config
 
 
-```json
+```js
 {
   // Required.
   "type" : "postgres",
