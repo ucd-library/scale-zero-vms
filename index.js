@@ -26,7 +26,8 @@ for( let port of impl.ports ) {
 
 const proxy = new VMProxy({ 
   portMap,
-  remoteHost : config.ip,
+  impl,
+  shutdownTime : config.shutdownTime,
   turnOnVm : () => {
     return impl.startVm();
   },
