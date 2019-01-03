@@ -1,7 +1,7 @@
 const VMProxy = require('./lib/vm-proxy');
 const Pg = require('./lib/vms/managed-postgresql');
 const Web = require('./lib/vms/webserver');
-const statusServer = require('./lib/status');
+const statusServer = require('./lib/status-server');
 
 let config = '/etc/scale-zero-proxy/config.json';
 if( process.argv.length > 2 ) {
@@ -27,17 +27,8 @@ for( let port of impl.ports ) {
 const proxy = new VMProxy({ 
   portMap,
   impl,
-  shutdownTime : config.shutdownTime,
-  turnOnVm : () => {
-    return impl.startVm();
-  },
-  turnOffVm : () => {
-    return impl.stopVm();
-  },
-  whitelist : (address) => {
-    return impl.whitelist(address);
-  }
+  shutdownTime : config.shutdownTime
 });
 proxy.listen();
 
-statusServer(proxy);
+statusServer(proxy, config);
